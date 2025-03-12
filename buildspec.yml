@@ -1,16 +1,21 @@
 version: 0.2
 
 phases:
+  install:
+    commands:
+      - echo "Installing Node.js dependencies..."
+      - npm install
   build:
     commands:
       - echo "Building the application..."
+      # No build step needed for this simple Node.js app
   post_build:
     commands:
       - echo "Packaging the artifact..."
       - mkdir dist
-      - echo "Hello from CodeBuild!" > dist/output.txt
+      - cp index.js package.json dist/
       - echo "Uploading the artifact..."
-      - aws s3 cp --recursive dist/ s3://my-codebuild-artifacts-bucket1/ 
+      - aws s3 cp --recursive dist/ s3://my-codebuild-artifacts-bucket1/
 artifacts:
   files:
     - dist/**/*
