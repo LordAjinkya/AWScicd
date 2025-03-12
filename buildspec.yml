@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Building the application..."
+  post_build:
+    commands:
+      - echo "Packaging the artifact..."
+      - mkdir dist
+      - echo "Hello from CodeBuild!" > dist/output.txt
+      - echo "Uploading the artifact..."
+      - aws s3 cp --recursive dist/ s3://my-codebuild-artifacts-bucket1/ 
+artifacts:
+  files:
+    - dist/**/*
