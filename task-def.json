@@ -8,7 +8,7 @@
   "containerDefinitions": [
     {
       "name": "MyAppContainer",
-      "image": "503561421231.dkr.ecr.us-east-1.amazonaws.com/your-ecr-repo-name",
+      "image": "<IMAGE>",
       "essential": true,
       "portMappings": [
         {
