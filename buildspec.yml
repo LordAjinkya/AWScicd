@@ -26,6 +26,5 @@ post_build:
     - ls -l > ls_output.txt
     - cat ls_output.txt
     - echo "Command execution test complete."
-    - cat imagedefinitions.json # Display the file contents
-artifacts:
+    - cat imagedefinitions.jsonartifacts:
   files: imagedefinitions.json
