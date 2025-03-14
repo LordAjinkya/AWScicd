@@ -32,11 +32,11 @@ phases:
       - echo "Build completed on $(date)"
       - echo "Pushing the Docker image to ECR..."
       - docker push "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG"
-      - echo "Creating imagedefinitions.json file..."
+      - echo "Creating imageDetail.json file..."
       - |
         echo '{"TaskDefinition":"MyAppTaskDefinitionGreen","ContainerName":"MyAppContainer","ImageURI":"'"$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG"'"}' > imageDetail.json
-      - echo "Verifying imagedefinitions.json contents..."
-      - cat imagedefinitions.json
+      - echo "Verifying imageDetail.json contents..."
+      - cat imageDetail.json
       - echo "Listing output files..."
       - ls -lah
 
