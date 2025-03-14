@@ -1,5 +1,5 @@
 {
-  "family": "<TASK_DEFINITION>",
+  "family": "MyAppTaskDefinitionBlue",
   "executionRoleArn": "arn:aws:iam::503561421231:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
   "requiresCompatibilities": ["FARGATE"],
