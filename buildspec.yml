@@ -18,5 +18,7 @@ post_build:
     - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
     - echo Writing image definitions file...
     - printf '[{"TaskDefinition":"%s","ContainerName":"%s","ImageURI":"%s"}]' MyAppTaskDefinitionGreen MyAppContainer $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG > imagedefinitions.json
+    - ls -l # List files in the directory
+    - cat imagedefinitions.json # Display the file contents
 artifacts:
   files: imagedefinitions.json
