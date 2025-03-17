@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "MyAppContainer",
-      "image": "image",
+      "image": "IMAGE",
       "memory": 512,
       "cpu": 256,
       "essential": true,
